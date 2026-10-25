@@ -117,3 +117,35 @@ footer{background:#3f5547;color:#e8efe9;text-align:left}.fgrid{display:grid;grid
 .btn[disabled]{opacity:.6;cursor:default}
 @media(max-width:820px){.maps{grid-template-columns:1fr}}
 @media(max-width:700px){.gal.home{grid-template-columns:1fr}}
+
+.sp2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start}
+.how{margin-top:16px;padding:16px;background:var(--soft);border-radius:14px;text-align:left}
+.how h4{margin:1em 0 .3em;color:var(--pri2)}.how h4:first-child{margin-top:0}
+.how ul,.how ol{padding-left:20px;margin:0}.how li{margin:5px 0}
+.mut{color:#6b6862;font-size:.85rem}
+.note{text-align:center;color:#6b6862;font-size:.9rem;max-width:760px;margin:20px auto 0}
+
+.socials{display:flex;gap:10px;margin-top:14px}
+.soc{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#ffffff26;color:#fff;transition:.2s}
+.soc svg{width:20px;height:20px;fill:currentColor}.soc svg.ln{fill:none}
+a.soc:hover{background:var(--green);transform:translateY(-2px)}
+
+.soclabel{margin:14px 0 0;font-size:.9rem;opacity:.85}.socials{margin-top:8px}
+.soc.fb{background:#1877f2}.soc.ig{background:linear-gradient(45deg,#f9a03f,#e6683c 30%,#dc2743 55%,#bc1888 80%,#6a3de8)}.soc.tt{background:#111}
+a.soc:hover{filter:brightness(1.12);transform:translateY(-2px)}
+a.soc.fb:hover{background:#1877f2}a.soc.tt:hover{background:#111}
+a.soc.ig:hover{background:linear-gradient(45deg,#f9a03f,#e6683c 30%,#dc2743 55%,#bc1888 80%,#6a3de8)}
+
+.sp2{grid-template-columns:repeat(2,1fr);align-items:stretch;gap:20px}
+.pcard{display:flex;flex-direction:column}
+.pcard .tag{align-self:flex-start;white-space:nowrap;max-width:100%;overflow:hidden;text-overflow:ellipsis}
+.pcard h3{font-size:1.1rem;min-height:3.2em;margin:.6em 0 .3em}
+.pcard p{font-size:.95rem;flex:1;margin:.3em 0 16px}
+.pcard .btn{align-self:flex-start}
+.pcard.on{outline:2px solid var(--pri)}
+.how.wide{margin-top:20px;padding:22px}
+.how.wide h3{margin:0 0 4px}
+.howgrid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.notice{display:flex;gap:12px;align-items:center;max-width:760px;margin:16px auto 24px;padding:14px 18px;background:#e6f4e7;border-left:4px solid var(--green);border-radius:12px}
+.notice svg{flex:none;width:26px;height:26px;fill:var(--green)}
+@media(max-width:820px){.sp2,.howgrid{grid-template-columns:1fr}.pcard h3{min-height:0}}

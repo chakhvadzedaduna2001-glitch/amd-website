@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import {contact} from '../data'
 import {send} from '../api'
+import Socials from '../components/Socials'
 const empty={name:'',email:'',msg:''}
 const q=a=>encodeURIComponent(a.city+', '+a.street)
 const pin=<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
@@ -11,7 +12,6 @@ export default function Contact(){
   const [busy,setBusy]=useState(false)
   const [fail,setFail]=useState(false)
   const on=k=>e=>setV({...v,[k]:e.target.value})
-  const socials=contact.socials.filter(s=>s.url)
   const submit=async e=>{
     e.preventDefault()
     const x={}
@@ -30,7 +30,7 @@ export default function Contact(){
       <p><b>ელფოსტა:</b> <a className="more" href={'mailto:'+contact.email}>{contact.email}</a></p>
       {contact.addresses.map(a=><a key={a.city} className="card link addr" target="_blank" rel="noopener noreferrer" href={'https://www.google.com/maps/search/?api=1&query='+q(a)}>{pin}<span><b>{a.city}</b><span>{a.street}</span><span className="more">რუკაზე ნახვა →</span></span></a>)}
       <p><b>სამუშაო საათები:</b> {contact.hours}</p>
-      {socials.length>0&&<p><b>სოციალური ქსელები:</b> {socials.map(s=><a key={s.name} className="more" target="_blank" rel="noopener noreferrer" href={s.url}>{s.name}</a>)}</p>}
+      <p><b>სოციალური ქსელები:</b></p><Socials/>
     </div>
     <form onSubmit={submit} noValidate>
       {done&&<p className="ok">შეტყობინება წარმატებით გაიგზავნა.</p>}

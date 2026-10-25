@@ -3,6 +3,7 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import ListPage from './pages/ListPage'
+import StatePrograms from './components/StatePrograms'
 import ServiceDetail from './pages/ServiceDetail'
 import SpecialistDetail from './pages/SpecialistDetail'
 import Gallery from './pages/Gallery'
@@ -19,7 +20,7 @@ export default function App(){
       <Route path="/about" element={<About/>}/>
       <Route path="/services" element={L('მომსახურებები','ბავშვის საჭიროებებზე მორგებული თერაპიები და აქტივობები.',services,'/services')}/>
       <Route path="/services/:id" element={<ServiceDetail/>}/>
-      <Route path="/programs" element={L('პროგრამები','განვითარებისა და დამოუკიდებლობის პროგრამები.',programs)}/>
+      <Route path="/programs" element={<>{L('პროგრამები','განვითარებისა და დამოუკიდებლობის პროგრამები.',programs)}<StatePrograms/></>}/>
       <Route path="/specialists" element={L('სპეციალისტები','გამოცდილი გუნდი, რომელიც ბავშვზე ზრუნავს.',specialists,'/specialists')}/>
       <Route path="/specialists/:id" element={<SpecialistDetail/>}/>
       <Route path="/news" element={L('სიახლეები','ღონისძიებები და მშობლებისთვის სასარგებლო ინფორმაცია.',news)}/>

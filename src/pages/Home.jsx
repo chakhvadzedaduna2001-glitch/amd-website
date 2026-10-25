@@ -1,8 +1,9 @@
 import {Link} from 'react-router-dom'
 import Card from '../components/Card'
+import StatePrograms from '../components/StatePrograms'
 import Faq from '../components/Faq'
 import logo from '../brand/logo.webp'
-import {services,programs,specialists,gallery,stats,steps,testimonials,faqs} from '../data'
+import {services,programs,specialists,stats,steps,testimonials,faqs} from '../data'
 export default function Home(){
   return(<>
     <section className="hero"><span className="b b1"/><span className="b b2"/><div className="wrap herogrid">
@@ -30,9 +31,7 @@ export default function Home(){
       <div className="grid">{programs.map((s,k)=><Card key={k} {...s}/>)}</div></section>
     <section className="band"><div className="wrap sec"><h2 className="st">მშობლები ჩვენს შესახებ</h2>
       <div className="grid">{testimonials.map(t=><blockquote key={t.name} className="card q">“{t.text}”<cite>— {t.name}</cite></blockquote>)}</div></div></section>
-    <section className="wrap sec"><h2 className="st">ჩვენი გარემო</h2>
-      <div className="gal home">{gallery.slice(0,3).map((g,k)=><figure key={k}><img src={g.src} alt={g.alt} loading="lazy" decoding="async"/></figure>)}</div>
-      <p style={{textAlign:'center',marginTop:20}}><Link to="/gallery" className="btn ghost">გალერეა</Link></p></section>
+    <StatePrograms/>
     <section className="wrap sec narrow"><h2 className="st">ხშირად დასმული კითხვები</h2><Faq items={faqs}/></section>
     <section className="wrap"><div className="cta"><h2>მზად ხართ პირველი ნაბიჯისთვის?</h2><p>დაგვიტოვეთ განაცხადი და მალე დაგიკავშირდებით.</p>
       <div className="row" style={{justifyContent:'center'}}><Link to="/register" className="btn light">დაიწყეთ ახლავე</Link><Link to="/contact" className="btn ghostlight">დაგვიკავშირდით</Link></div></div></section></>)
